@@ -1,6 +1,6 @@
 {
-    "name": "my-api-app",
-    "version": "1.0.0",
+    "name": "Generator_Puisi_app",
+    "version": "1.0.5",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
