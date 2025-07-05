@@ -77,13 +77,13 @@ export default function HomePage() {
   };
 
   return (
-    <main style={{ fontFamily: 'Arial, sans-serif', maxWidth: '600px', margin: 'auto', padding: '20px', position: 'relative', backgroundColor: '#f0f8ff', touchAction: 'manipulation' }}>
+    <main style={{ fontFamily: 'Arial, sans-serif', maxWidth: '600px', margin: 'auto', padding: '20px', position: 'relative', backgroundColor: '#e0e7ff' }}>
       <img 
         src="https://ar-hosting.pages.dev/1751679958097.jpg" 
         alt="Logo" 
-        style={{ position: 'absolute', top: '20px', left: '20px', width: '60px', height: '60px', borderRadius: '50%', border: '2px solid #0070f3' }} 
+        style={{ position: 'absolute', top: '20px', left: '10px', width: '60px', height: '60px', borderRadius: '50%', border: '2px solid #0070f3' }} 
       />
-      <h1 style={{ textAlign: 'center', color: '#0070f3' }}>Generator Puisi (Pages Router)</h1>
+      <h1 style={{ textAlign: 'center', color: '#003366' }}>Generator Puisi (Pages Router)</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="topic">Topik Puisi:</label><br />
@@ -123,8 +123,8 @@ export default function HomePage() {
 
       {error && <div style={{ color: 'red', marginTop: '20px' }}><p><b>Error:</b> {error}</p></div>}
       {poem && (
-        <div style={{ marginTop: '20px', whiteSpace: 'pre-wrap', background: '#e6f7ff', padding: '15px', border: '1px solid #0070f3', borderRadius: '4px' }}>
-          <h3 style={{ color: '#0070f3' }}>Hasil Puisi:</h3>
+        <div style={{ marginTop: '20px', whiteSpace: 'pre-wrap', background: '#f0f4ff', padding: '15px', border: '1px solid #0070f3', borderRadius: '4px' }}>
+          <h3 style={{ color: '#003366' }}>Hasil Puisi:</h3>
           <p>{poem}</p>
           <button onClick={copyToClipboard} style={{ marginTop: '10px', padding: '10px', borderRadius: '4px', backgroundColor: '#28a745', color: '#fff', border: 'none' }}>
             Salin Puisi
@@ -134,10 +134,11 @@ export default function HomePage() {
 
       {showAlert && <CustomAlert message="Puisi telah disalin ke clipboard!" onClose={closeAlert} />}
 
-      <footer style={{ textAlign: 'center', marginTop: '40px', fontSize: '14px', color: '#555' }}>
+      <footer style={{ textAlign: 'center', marginTop: '40px', fontSize: '12px', color: '#555', fontFamily: 'Courier New, monospace' }}>
         <p>Credit: Vercel Team</p>
         <p>Today is Saturday, July 5, 2025</p>
       </footer>
     </main>
   );
-}
+        }
+        
