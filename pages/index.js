@@ -20,7 +20,6 @@ export default function HomePage() {
     };
 
     try {
-      // Alamat API tetap sama
       const response = await fetch('/api/generate-poem', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -39,17 +38,22 @@ export default function HomePage() {
   };
 
   return (
-    <main style={{ fontFamily: 'sans-serif', maxWidth: '600px', margin: 'auto', padding: '20px' }}>
-      <h1>Generator Puisi (Pages Router)</h1>
+    <main style={{ fontFamily: 'sans-serif', maxWidth: '600px', margin: 'auto', padding: '20px', position: 'relative' }}>
+      <img 
+        src="https://ar-hosting.pages.dev/1751679958097.jpg" 
+        alt="Logo" 
+        style={{ position: 'absolute', top: '20px', left: '20px', width: '50px', height: '50px', borderRadius: '50%' }} 
+      />
+      <h1 style={{ textAlign: 'center' }}>Generator Puisi (Pages Router)</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="topic">Topik Puisi:</label><br />
-          <input type="text" id="topic" name="topic" defaultValue="senja di pelabuhan" required style={{ width: '100%', padding: '8px' }} />
+          <input type="text" id="topic" name="topic" defaultValue="senja di pelabuhan" required style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }} />
         </div>
         <br />
         <div>
           <label htmlFor="type">Jenis:</label><br />
-          <select id="type" name="type" style={{ padding: '8px' }}>
+          <select id="type" name="type" style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}>
             <option value="Free Verse">Free Verse</option>
             <option value="Sonnet">Sonnet</option>
             <option value="Haiku">Haiku</option>
@@ -58,7 +62,7 @@ export default function HomePage() {
         <br />
         <div>
           <label htmlFor="lang">Bahasa:</label><br />
-          <select id="lang" name="lang" style={{ padding: '8px' }}>
+          <select id="lang" name="lang" style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}>
             <option value="Indonesian">Indonesia</option>
             <option value="English">Inggris</option>
           </select>
@@ -66,25 +70,31 @@ export default function HomePage() {
         <br />
         <div>
           <label htmlFor="length">Panjang:</label><br />
-          <select id="length" name="length" style={{ padding: '8px' }}>
+          <select id="length" name="length" style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}>
             <option value="short">Pendek</option>
             <option value="medium">Sedang</option>
             <option value="long">Panjang</option>
           </select>
         </div>
         <br />
-        <button type="submit" disabled={loading} style={{ padding: '10px 20px' }}>
+        <button type="submit" disabled={loading} style={{ padding: '10px 20px', borderRadius: '4px', backgroundColor: '#0070f3', color: '#fff', border: 'none' }}>
           {loading ? 'Membuat...' : 'Buat Puisi'}
         </button>
       </form>
 
       {error && <div style={{ color: 'red', marginTop: '20px' }}><p><b>Error:</b> {error}</p></div>}
       {poem && (
-        <div style={{ marginTop: '20px', whiteSpace: 'pre-wrap', background: '#f4f4f4', padding: '15px', border: '1px solid #ddd' }}>
+        <div style={{ marginTop: '20px', whiteSpace: 'pre-wrap', background: '#f4f4f4', padding: '15px', border: '1px solid #ddd', borderRadius: '4px' }}>
           <h3>Hasil Puisi:</h3>
           <p>{poem}</p>
         </div>
       )}
+
+      <footer style={{ textAlign: 'center', marginTop: '40px', fontSize: '14px', color: '#555' }}>
+        <p>Credit: Vercel Team</p>
+        <p>Today is Saturday, July 5, 2025</p>
+      </footer>
     </main>
   );
-    }
+          }
+        
